@@ -19,28 +19,28 @@ export class TimeDisplayComponent {
   constructor() {
   }
 
-  ngOnChanges(changes: SimpleChanges) {
-    for (let propName in changes) {
+  // ngOnChanges(changes: SimpleChanges) {
+  //   for (let propName in changes) {
 
-      if (propName == 'inputData') {
+  //     if (propName == 'inputData') {
 
-        console.log("버튼 클릭 전 : " + changes[propName].currentValue)
-        console.log("버튼 클릭 후 : " + changes[propName].previousValue)
+  //       console.log("버튼 클릭 전 : " + changes[propName].currentValue)
+  //       console.log("버튼 클릭 후 : " + changes[propName].previousValue)
 
-        switch (changes[propName].currentValue) {
-          case 'start':
-            this.timeStart();
-            break;
-          case 'stop':
-            this.timeStop();
-            break;
-          case 'reset':
-            this.timeReset();
-            break;
-        }
-      }
-    }
-  }
+  //       switch (changes[propName].currentValue) {
+  //         case 'start':
+  //           this.timeStart();
+  //           break;
+  //         case 'stop':
+  //           this.timeStop();
+  //           break;
+  //         case 'reset':
+  //           this.timeReset();
+  //           break;
+  //       }
+  //     }
+  //   }
+  // }
 
   timeStart() {
     this.timeStop();
