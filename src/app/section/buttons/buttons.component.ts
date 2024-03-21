@@ -7,11 +7,12 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 export class ButtonsComponent {
 
-  @Output() clickEvent = new EventEmitter();
+  // 이벤트 에미터 선언
+  @Output() clickEvent = new EventEmitter<String>();
 
-
-  start() {
-    this.clickEvent.emit();
+  // 버튼 클릭시 부모 컴포넌트에 데이터 전달
+  executeButton(command: string) {
+    this.clickEvent.emit(command);
   }
 
 }
