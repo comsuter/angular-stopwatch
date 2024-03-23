@@ -21,12 +21,9 @@ export class TimeDisplayComponent {
 
   // ngOnChanges(changes: SimpleChanges) {
   //   for (let propName in changes) {
-
   //     if (propName == 'inputData') {
-
   //       console.log("버튼 클릭 전 : " + changes[propName].currentValue)
   //       console.log("버튼 클릭 후 : " + changes[propName].previousValue)
-
   //       switch (changes[propName].currentValue) {
   //         case 'start':
   //           this.timeStart();
