@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import moment from 'moment';
 import { interval } from 'rxjs';
 import { map } from "rxjs/operators";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-clock',
@@ -12,10 +13,8 @@ export class ClockComponent {
 
   timeString: string = ''
 
-  constructor() {
-
-    // 1초마다 실행
-    interval(1000)
+  constructor(private router: Router) {
+    interval(1000) // 1초마다 실행
       .pipe(map(() => {
         return moment().format('YYYY-MM-DD HH:mm:ss')
       }))
@@ -24,5 +23,8 @@ export class ClockComponent {
       })
   }
 
+  goStopwatch() {
+    this.router.navigateByUrl('/stopwatch');
+  }
 
 }

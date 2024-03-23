@@ -1,10 +1,14 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
+import { PageToggleService } from '../../../share/page-toggle.service';
 
 
 @Component({
   selector: 'app-time-display',
   templateUrl: './time-display.component.html',
-  styleUrl: './time-display.component.scss'
+  styleUrl: './time-display.component.scss',
+  // providers: [
+  //   PageToggleService
+  // ]
 })
 export class TimeDisplayComponent {
 
@@ -16,28 +20,9 @@ export class TimeDisplayComponent {
 
   timeInterval: any
 
-  constructor() {
-  }
+  constructor(public pageToggleService: PageToggleService) {
 
-  // ngOnChanges(changes: SimpleChanges) {
-  //   for (let propName in changes) {
-  //     if (propName == 'inputData') {
-  //       console.log("버튼 클릭 전 : " + changes[propName].currentValue)
-  //       console.log("버튼 클릭 후 : " + changes[propName].previousValue)
-  //       switch (changes[propName].currentValue) {
-  //         case 'start':
-  //           this.timeStart();
-  //           break;
-  //         case 'stop':
-  //           this.timeStop();
-  //           break;
-  //         case 'reset':
-  //           this.timeReset();
-  //           break;
-  //       }
-  //     }
-  //   }
-  // }
+  }
 
   timeStart() {
     this.timeStop();
@@ -64,4 +49,24 @@ export class TimeDisplayComponent {
     this.sec = 0;
     this.min = 0;
   }
+
+  // ngOnChanges(changes: SimpleChanges) {
+  //   for (let propName in changes) {
+  //     if (propName == 'inputData') {
+  //       console.log("버튼 클릭 전 : " + changes[propName].currentValue)
+  //       console.log("버튼 클릭 후 : " + changes[propName].previousValue)
+  //       switch (changes[propName].currentValue) {
+  //         case 'start':
+  //           this.timeStart();
+  //           break;
+  //         case 'stop':
+  //           this.timeStop();
+  //           break;
+  //         case 'reset':
+  //           this.timeReset();
+  //           break;
+  //       }
+  //     }
+  //   }
+  // }
 }
